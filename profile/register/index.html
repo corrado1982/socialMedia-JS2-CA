@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../dist/css/styles.css" />
-    <title>Register</title>
+    <script src="/src/js/index.mjs" defer type="module"></script>
+    <title>Social Media | Register</title>
     <!-- <link
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -21,32 +22,40 @@
     <div class="m-5">
       <div class="container" style="margin: 150px auto">
         <div class="row justify-content-center flex-wrap mt-5">
-          <!-- <div class="col-6 m-3 p-5 bg-light rounded-3" style="width: 400px">
-            <h1 class="text-primary fs-1 fw-bold">My Social</h1>
+          <div class="col-6 m-3 p-5 bg-light rounded-3" style="width: 400px">
+            <a href="/"
+              ><h1 class="text-primary fs-1 fw-bold">Social Media</h1></a
+            >
             <hr />
             <h2 class="fw-normal">
-              My social is the biggest social media at the moment
+              Get started and register your account on Social Media
             </h2>
-          </div> -->
+          </div>
           <div class="col-6 m-3 p-5 bg-light rounded-3" style="width: 400px">
             <div class="">
-              <form id="registerForm">
+              <!-- NEED TO FIX ACTION TO DIRECT THE PAGE TO AUTH/REGISTER -->
+              <form id="registerForm" method="get" action="/index.html">
                 <div class="col-auto">
                   <!-- <label for="email"></label> -->
                   <input
                     type="text"
                     name="name"
-                    class="form-control"
+                    class="form-control mb-3"
                     id="registerName"
                     placeholder="Your Name *"
+                    pattern="^[\w]+$"
+                    maxlength="20"
+                    title="User name must contain upper case and lower case letters, number and underscore (_). Example User_Name123"
                     required
                   />
                   <input
                     type="email"
                     name="email"
-                    class="form-control"
+                    class="form-control mb-3"
                     id="email"
                     placeholder="Your E-mail *"
+                    pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+                    title="Only @(stud.)noroff.no domains are allowed to register."
                     required
                   />
 
@@ -55,7 +64,7 @@
                   <input
                     type="password"
                     name="password"
-                    class="form-control"
+                    class="form-control mb-3"
                     id="inputPassword"
                     placeholder="Password *"
                     minlength="8"
@@ -64,13 +73,13 @@
                   <input
                     type="url"
                     name="banner"
-                    class="form-control"
+                    class="form-control mb-3"
                     placeholder="Banner"
                   />
                   <input
                     type="url"
                     name="avatar"
-                    class="form-control"
+                    class="form-control mb-3"
                     placeholder="Avatar"
                   />
                   <!-- </div> -->
@@ -86,7 +95,7 @@
                 </div>
                 <div class="col-auto">
                   <button type="submit" class="btn btn-success mb-3 w-100">
-                    Subscribe
+                    Register
                   </button>
                 </div>
               </form>
@@ -97,8 +106,8 @@
     </div>
     <footer class="bg-light mt-5">
       <div class="text-center">
-        <h2 class="text-dark pt-4 fw-bold">My Social</h2>
-        <p class="m-0 pb-5">Is a website powered by Bootrtrap and SASS</p>
+        <h2 class="text-dark pt-4 fw-bold">Social Media</h2>
+        <p class="m-0 pb-5">Is a website made in JavaScript by Corrado</p>
       </div>
     </footer>
     <script
