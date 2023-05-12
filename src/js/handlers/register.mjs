@@ -1,3 +1,5 @@
+import { register } from "../api/auth/register.mjs";
+
 export function setRegisterFormListener() {
   const form = document.querySelector("#registerForm");
 
@@ -8,5 +10,7 @@ export function setRegisterFormListener() {
     const formData = new FormData(form);
     const profile = Object.fromEntries(formData.entries());
     console.log("register listener is working");
+
+    register(profile);
   });
 }
