@@ -1,5 +1,5 @@
-import { authFetch } from "../authFetch.mjs";
 import { API_SOCIAL_URL } from "../constants.mjs";
+import { authFetch } from "../authFetch.mjs";
 
 const action = "/posts";
 const method = "post";
@@ -13,6 +13,4 @@ export async function createPost(postData) {
   });
 
   return await response.json();
-
-  //   console.log(post);
 }
