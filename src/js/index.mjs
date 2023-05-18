@@ -5,6 +5,7 @@ import * as listeners from "./handlers/index.mjs";
 import * as templates from "./templates/index.mjs";
 import * as postMethods from "./api/posts/index.mjs";
 // import { renderPostTemplate } from "./templates/index.mjs";
+import { createPost } from "./api/posts/index.mjs";
 
 const path = location.pathname;
 
@@ -18,10 +19,15 @@ if (path === "/profile/login/") {
   listeners.setUpdatePostListener();
 }
 
-async function testTemplate() {
-  const posts = await postMethods.getPosts();
-  const container = document.querySelector("#post");
-  templates.renderPostTemplates(posts, container);
-}
+// async function testTemplate() {
+//   const posts = await postMethods.getPosts();
+//   const container = document.querySelector("#post");
+//   templates.renderPostTemplates(posts, container);
+// }
 
-testTemplate();
+// testTemplate();
+
+// createPost({
+//   title: "heja2",
+//   body: "another post2",
+// });
