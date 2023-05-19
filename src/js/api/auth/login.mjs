@@ -22,6 +22,11 @@ export async function login(profile) {
 
   storage.save("profile", user);
 
+  if (!response.ok) {
+    alert("Password or Username is wrong");
+    throw new Error("Password or Username is wrong");
+  }
+
   // alert("You are now logged in!");
   // console.log(result);
 }
