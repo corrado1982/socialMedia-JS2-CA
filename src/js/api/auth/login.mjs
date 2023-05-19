@@ -22,6 +22,6 @@ export async function login(profile) {
 
   storage.save("profile", user);
 
-  alert("You are now logged in!");
+  // alert("You are now logged in!");
   // console.log(result);
 }
