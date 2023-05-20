@@ -22,6 +22,8 @@ export async function login(profile) {
 
   storage.save("profile", user);
 
+  location.href = "/posts";
+
   if (!response.ok) {
     alert("Password or Username is wrong");
     throw new Error("Password or Username is wrong");
