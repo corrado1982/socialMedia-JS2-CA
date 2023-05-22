@@ -1,4 +1,5 @@
 import { isloggedIn } from "./storage.mjs";
+import { logoutListener } from "../../handlers/logout.mjs";
 
 export function redirectBasedOnLogin(path) {
   if (isloggedIn()) {
@@ -6,8 +7,12 @@ export function redirectBasedOnLogin(path) {
       location.href = "/posts/";
     }
   } else {
-    if (path === "/posts/" || path === "/posts/index.html") {
-      location.href = "/profile/login/";
+    if (
+      path !== "/" &&
+      path !== "/profile/login/" &&
+      path !== "/profile/register/"
+    ) {
+      location.href = "/";
     }
   }
 }
