@@ -23,6 +23,8 @@ if (path === "/profile/login/") {
   listeners.logoutListener();
 } else if (path === "/posts/") {
   listeners.logoutListener();
+} else if (path === "/profile/") {
+  listeners.logoutListener();
 }
 redirectBasedOnLogin(path);
 
