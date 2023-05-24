@@ -1,4 +1,7 @@
-export function postTemplateA(postData) {
+// import * as templates from "./templates/index.mjs";
+import * as postMethods from "../api/posts/index.mjs";
+
+function postTemplateA(postData) {
   const post = document.createElement("div");
   post.classList.add("post");
   post.innerHTML = `<div href="/post/index.html?id=${postData.id}" class="post" id=${postData.id}>${postData.title}</div>`;
@@ -19,26 +22,17 @@ export function postTemplateA(postData) {
   return post;
 }
 
-export function postTemplateB(postData) {
-  const posts = document.createElement("div");
-  posts.classList.add("posts");
-
-  posts.innerHTML = `<a href="/post/index.html?id=${postData.id}" class="post" id=${postData.id}>${postData.title}</a>`;
-
-  if (postData.media) {
-    const img = document.createElement("img");
-    img.src = postData.media;
-    img.alt = `Image of ${postData.title}`;
-    posts.append(img);
-  }
-
-  return posts;
-}
-
-export function renderPostTemplate(postData, parent) {
+function renderPostTemplate(postData, parent) {
   parent.append(postTemplateA(postData));
 }
 
-export function renderPostTemplates(postDataList, parent) {
-  parent.append(...postDataList.map(postTemplateB));
+async function testTemplate() {
+  const queryString = document.location.search;
+  const params = new URLSearchParams(queryString);
+  const id = params.get("id");
+  const post = await postMethods.getPost(id);
+  const container = document.querySelector("#singlePost");
+  renderPostTemplate(post, container);
 }
+
+testTemplate();

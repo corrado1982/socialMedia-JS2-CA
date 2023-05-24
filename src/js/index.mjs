@@ -28,25 +28,6 @@ if (path === "/profile/login/") {
 }
 redirectBasedOnLogin(path);
 
-async function testTemplates() {
-  const posts = await postMethods.getPosts();
-  const container = document.querySelector("#post");
-  templates.renderPostTemplates(posts, container);
-}
-
-testTemplates();
-
-async function testTemplate() {
-  const queryString = document.location.search;
-  const params = new URLSearchParams(queryString);
-  const id = params.get("id");
-  const post = await postMethods.getPost(id);
-  const container = document.querySelector("#singlePost");
-  templates.renderPostTemplate(post, container);
-}
-
-testTemplate();
-
 // createPost({
 //   title: "heja2",
 //   body: "another post2",
