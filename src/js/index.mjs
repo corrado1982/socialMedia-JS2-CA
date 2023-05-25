@@ -28,9 +28,3 @@ if (path === "/profile/login/") {
   listeners.logoutListener();
 }
 redirectBasedOnLogin(path);
-
-updatePost({
-  id: 6530,
-  title: "Title1 updated",
-  body: "updated",
-});
