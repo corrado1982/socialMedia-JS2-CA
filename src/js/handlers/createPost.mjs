@@ -1,6 +1,6 @@
-import { createPost } from "../api/posts/index.mjs";
+import { createPost } from "../api/posts/create.mjs";
 
-export function setCreatePostFormListener() {
+export async function setCreatePostFormListener() {
   const form = document.querySelector("#createPost");
 
   if (form) {
@@ -10,6 +10,8 @@ export function setCreatePostFormListener() {
       const formData = new FormData(form);
       const post = Object.fromEntries(formData.entries());
 
+      console.log("create submit is working");
+      console.log(post);
       createPost(post);
     });
   }

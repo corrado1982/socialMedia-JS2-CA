@@ -3,6 +3,7 @@
 
 import * as listeners from "./handlers/index.mjs";
 import { redirectBasedOnLogin } from "./api/helpers/auth.mjs";
+import { updatePost } from "./api/posts/index.mjs";
 import * as templates from "./templates/index.mjs";
 import * as postMethods from "./api/posts/index.mjs";
 // import { renderPostTemplate } from "./templates/index.mjs";
@@ -18,7 +19,7 @@ if (path === "/profile/login/") {
 } else if (path === "/post/create/") {
   listeners.setCreatePostFormListener();
   listeners.logoutListener();
-} else if (path === "/post/edit/") {
+} else if (path === "/post/index.html") {
   listeners.setUpdatePostListener();
   listeners.logoutListener();
 } else if (path === "/posts/") {
@@ -28,7 +29,8 @@ if (path === "/profile/login/") {
 }
 redirectBasedOnLogin(path);
 
-// createPost({
-//   title: "heja2",
-//   body: "another post2",
-// });
+updatePost({
+  id: 6530,
+  title: "Title1 updated",
+  body: "updated",
+});
