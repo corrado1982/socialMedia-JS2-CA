@@ -10,6 +10,8 @@ import * as postMethods from "./api/posts/index.mjs";
 import { createPost } from "./api/posts/index.mjs";
 import { isloggedIn } from "./api/helpers/storage.mjs";
 
+import { removePost } from "./api/posts/index.mjs";
+
 const path = location.pathname;
 
 if (path === "/profile/login/") {
@@ -21,6 +23,7 @@ if (path === "/profile/login/") {
   listeners.logoutListener();
 } else if (path === "/post/index.html") {
   listeners.setUpdatePostListener();
+  listeners.removePostListener();
   listeners.logoutListener();
 } else if (path === "/posts/") {
   listeners.logoutListener();
