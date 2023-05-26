@@ -5,10 +5,11 @@ function postTemplateB(postData) {
   const posts = document.createElement("div");
   posts.classList.add("posts");
 
-  posts.innerHTML = `<a href="/post/index.html?id=${postData.id}" class="post" id=${postData.id}>${postData.title}</a>`;
+  posts.innerHTML = `<a href="/post/index.html?id=${postData.id}" class="post" id=${postData.id}>${postData.title} </a> <p>created ${postData.created}</p>`;
 
   if (postData.media) {
     const img = document.createElement("img");
+    img.classList.add("image-size");
     img.src = postData.media;
     img.alt = `Image of ${postData.title}`;
     posts.append(img);

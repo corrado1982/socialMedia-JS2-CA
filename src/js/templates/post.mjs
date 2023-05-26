@@ -4,13 +4,16 @@ import * as postMethods from "../api/posts/index.mjs";
 function postTemplateA(postData) {
   const post = document.createElement("div");
   post.classList.add("post");
-  post.innerHTML = `<div href="/post/index.html?id=${postData.id}" class="post" id=${postData.id}>${postData.title}</div>`;
+  post.innerHTML = `<div>
+  <div href="/post/index.html?id=${postData.id}" class="post text-primary" id=${postData.id}>${postData.title}</div>
+  </div>`;
 
   const idInput = document.querySelector("#idInput");
   idInput.value = postData.id;
 
   if (postData.media) {
     const img = document.createElement("img");
+    img.classList.add("image-size");
     img.src = postData.media;
     img.alt = `Image of ${postData.title}`;
     post.append(img);
