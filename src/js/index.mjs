@@ -12,6 +12,10 @@ import { isloggedIn } from "./api/helpers/storage.mjs";
 
 import { removePost } from "./api/posts/index.mjs";
 
+import * as storage from "../js/storage/index.mjs";
+
+import { getName } from "./api/helpers/storage.mjs";
+
 const path = location.pathname;
 
 if (path === "/profile/login/") {
