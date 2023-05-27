@@ -7,7 +7,7 @@ function postTemplateB(postData) {
 
   posts.innerHTML += `<div class="card">
   <a href="/post/index.html?id=${postData.id}" class="post-title" id=${postData.id}>${postData.title} </a> 
-  <p>${postData.body}</p>
+  <p class="post-body">${postData.body}</p>
   <div id="postsId" value="${postData.id}">ID: ${postData.id}</div>
  
   <p>created: ${postData.created}</p>
@@ -49,10 +49,10 @@ const searchPosts = () => {
     const postTitle = card
       .querySelector(".post-title")
       .textContent.toLowerCase();
-    // const postBody = card.querySelector(".post-body").textContent.toLowerCase();
+    const postBody = card.querySelector(".post-body").textContent.toLowerCase();
 
     // checks if search matches
-    if (postTitle.includes(searchTerm)) {
+    if (postTitle.includes(searchTerm) || postBody.includes(searchTerm)) {
       card.style.display = "block";
     } else {
       card.style.display = "none";
