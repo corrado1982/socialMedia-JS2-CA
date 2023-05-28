@@ -5,11 +5,11 @@ function postTemplateB(postData) {
   posts.classList.add("posts");
 
   posts.innerHTML = `<div class="card">
-  <a href="/post/index.html?id=${postData.id}" class="post-title" id=${postData.id}>${postData.title} </a> 
-  <p class="post-body">${postData.body}</p>
-  <div id="postsId" value="${postData.id}">ID: ${postData.id}</div>
+  <a href="/post/index.html?id=${postData.id}" class="post-title p-2 " id=${postData.id}>${postData.title} </a> 
+  <p class="post-body p-2">${postData.body}</p>
+  <div class="p-2" id="postsId" value="${postData.id}">ID: ${postData.id}</div>
  
-  <p>created: ${postData.created}</p>
+  <p class="p-2">created: ${postData.created}</p>
   </div>`;
 
   if (postData.media) {
