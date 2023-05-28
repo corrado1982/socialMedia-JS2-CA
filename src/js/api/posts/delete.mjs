@@ -4,7 +4,7 @@ import { API_SOCIAL_URL } from "../constants.mjs";
 
 const action = "/posts";
 const method = "delete";
-
+// removing the post with delete method with alert message in case it will be a response or not
 export async function removePost(id) {
   if (!id) {
     throw new Error("Delete requires a postId");
@@ -23,6 +23,4 @@ export async function removePost(id) {
   }
 
   return await response.json();
-
-  //   console.log(post);
 }

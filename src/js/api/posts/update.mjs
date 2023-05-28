@@ -23,6 +23,5 @@ export async function updatePost(postData) {
     location.href = "/posts";
   }
 
-  console.log(response);
   return await response.json();
 }

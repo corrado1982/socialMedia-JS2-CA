@@ -10,8 +10,6 @@ export async function setCreatePostFormListener() {
       const formData = new FormData(form);
       const post = Object.fromEntries(formData.entries());
 
-      console.log("create submit is working");
-      console.log(post);
       createPost(post);
     });
   }
