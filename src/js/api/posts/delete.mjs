@@ -15,6 +15,13 @@ export async function removePost(id) {
     method,
   });
 
+  if (!response.ok) {
+    alert("Sorry, you can delete only your posts...");
+  } else {
+    alert("Now your post is deleted");
+    location.href = "/posts";
+  }
+
   return await response.json();
 
   //   console.log(post);
