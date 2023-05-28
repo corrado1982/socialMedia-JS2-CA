@@ -1,4 +1,3 @@
-// import * as templates from "./templates/index.mjs";
 import * as postMethods from "../api/posts/index.mjs";
 
 function postTemplateB(postData) {
@@ -12,7 +11,7 @@ function postTemplateB(postData) {
  
   <p>created: ${postData.created}</p>
   </div>`;
-  //<img class="image-size" src=${postData.media} alt="Image of ${postData.title}" ></img>
+
   if (postData.media) {
     const img = document.createElement("img");
     img.classList.add("image-size");
@@ -27,10 +26,10 @@ function renderPostTemplates(postDataList, parent) {
   parent.append(...postDataList.map(postTemplateB));
 }
 
-async function testTemplates() {
+async function templates() {
   const posts = await postMethods.getPosts();
   const container = document.querySelector("#post");
   renderPostTemplates(posts, container);
 }
 
-testTemplates();
+templates();

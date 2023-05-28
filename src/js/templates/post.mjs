@@ -32,7 +32,7 @@ function renderPostTemplate(postData, parent) {
   parent.append(postTemplateA(postData));
 }
 
-async function testTemplate() {
+async function template() {
   const queryString = document.location.search;
   const params = new URLSearchParams(queryString);
   const id = params.get("id");
@@ -41,4 +41,4 @@ async function testTemplate() {
   renderPostTemplate(post, container);
 }
 
-testTemplate();
+template();
