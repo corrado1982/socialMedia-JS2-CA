@@ -1,17 +1,7 @@
-// import { setRegisterFormListener } from "./handlers/register.mjs";
-// import { setLoginFormListener } from "./handlers/login.mjs";
-
 import * as listeners from "./handlers/index.mjs";
 import { redirectBasedOnLogin } from "./api/helpers/auth.mjs";
-// import { updatePost } from "./api/posts/index.mjs";
+
 import * as templates from "./templates/index.mjs";
-// import * as postMethods from "./api/posts/index.mjs";
-// import { renderPostTemplate } from "./templates/index.mjs";
-// import { createPost } from "./api/posts/index.mjs";
-// import { isloggedIn } from "./api/helpers/storage.mjs";
-// import { removePost } from "./api/posts/index.mjs";
-// import * as storage from "../js/storage/index.mjs";
-// import { getName } from "./api/helpers/storage.mjs";
 
 const path = location.pathname;
 
@@ -32,8 +22,3 @@ if (path === "/profile/login/") {
   listeners.logoutListener();
 }
 redirectBasedOnLogin(path);
-
-// createPost({
-//   title: "hey",
-//   body: "hey",
-// });
