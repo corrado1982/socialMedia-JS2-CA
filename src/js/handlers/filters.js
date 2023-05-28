@@ -1,4 +1,4 @@
-//                SEARCH FORM cambio la classe ... ...
+//                SEARCH FORM
 
 const searchBarr = document.getElementById("searchBar");
 const postCards = document.getElementsByClassName("posts");

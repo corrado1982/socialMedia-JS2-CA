@@ -1,5 +1,5 @@
 import { register } from "../api/auth/register.mjs";
-
+// register form listener, on submit the data from the form will be sent as a post method
 export function setRegisterFormListener() {
   const form = document.querySelector("#registerForm");
 
@@ -10,7 +10,6 @@ export function setRegisterFormListener() {
       const form = event.target;
       const formData = new FormData(form);
       const profile = Object.fromEntries(formData.entries());
-      console.log("register listener is working");
 
       register(profile);
     });

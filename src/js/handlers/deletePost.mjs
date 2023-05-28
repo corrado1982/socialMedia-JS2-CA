@@ -7,11 +7,9 @@ export async function removePostListener() {
   const url = new URL(location.href);
   const id = url.searchParams.get("id");
 
-  //   if (form) {
   deleteButton.addEventListener("click", (event) => {
     event.preventDefault();
     console.log("remove button here");
     removePost(id);
   });
-  //   }
 }

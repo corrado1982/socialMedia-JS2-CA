@@ -3,7 +3,7 @@ import * as storage from "../../storage/index.mjs";
 
 const action = "/auth/login";
 const method = "post";
-
+// fetching and posting access token and user data
 export async function login(profile) {
   const loginURL = API_SOCIAL_URL + action;
   const body = JSON.stringify(profile);
@@ -17,9 +17,8 @@ export async function login(profile) {
   });
 
   const { accessToken, ...user } = await response.json();
-
+  // saving token and profile to the storage
   storage.save("token", accessToken);
-
   storage.save("profile", user);
 
   if (!response.ok) {
@@ -27,7 +26,4 @@ export async function login(profile) {
     throw new Error("Password or Username is wrong");
   }
   location.href = "/posts";
-
-  // alert("You are now logged in!");
-  // console.log(result);
 }
