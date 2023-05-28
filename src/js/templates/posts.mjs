@@ -28,7 +28,7 @@ function renderPostTemplates(postDataList, parent) {
 
 async function templates() {
   const posts = await postMethods.getPosts();
-  const container = document.querySelector("#post");
+  const container = document.getElementById("post");
   renderPostTemplates(posts, container);
 }
 
