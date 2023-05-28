@@ -12,6 +12,10 @@ export async function createPost(postData) {
     method,
     body: JSON.stringify(postData),
   });
+  if (response.ok) {
+    alert("Your post is been created");
+    location.href = "/posts";
+  }
 
   return await response.json();
 }

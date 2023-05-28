@@ -15,6 +15,14 @@ export async function updatePost(postData) {
     method,
     body: JSON.stringify(postData),
   });
+
+  if (!response.ok) {
+    alert("Sorry, you can edit only your posts...");
+  } else {
+    alert("Your post was updated!");
+    location.href = "/posts";
+  }
+
   console.log(response);
   return await response.json();
 }
